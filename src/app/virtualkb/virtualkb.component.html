@@ -1,0 +1,14 @@
+<h2>VirtualKb Component</h2>
+
+<div class="values">
+    <p *ngFor="let value of values">{{ value }}</p>
+</div>
+
+<div class="virtual-kb">
+    <button *ngFor="let key of keys" (click)="insertValue($event)">{{ key }}</button>
+</div>
+
+
+<div>
+    <button *ngIf="completed">Valider</button>
+</div>

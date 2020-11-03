@@ -1,0 +1,15 @@
+<!-- Flocker -->
+<div class="button">
+    <button (click)="showFlock()">Player</button>
+</div>
+
+<div class="flock" *ngIf="flockPart">
+    <img *ngFor="let b of path" [src]="b" (click)="selected($event)">
+</div>
+
+<div>
+    <select name="players" id="playersList" (change)="flockName($event)" > 
+        <option value="">Choose your player tag</option>
+        <option *ngFor="let p of playersList">{{ p }}</option>
+    </select>
+</div>

@@ -1,0 +1,16 @@
+.images{
+    display: flex;
+}
+
+.image{
+ width: 50px;
+ cursor: pointer;
+}
+
+.active{
+    width: 400px;
+}
+
+.container{
+    display: flex;
+}

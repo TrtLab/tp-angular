@@ -1,0 +1,9 @@
+<!-- Image gallery -->
+<div class="container">
+    <div class="images">
+        <img *ngFor="let p of path" [src]="p" alt="" class="image" (click)="isActive($event)">
+    </div>
+    <div>
+        <app-flocker></app-flocker>
+    </div>
+</div>

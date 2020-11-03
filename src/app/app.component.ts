@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FruitService } from './services/fruit.service'
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'intro';
+  fruits : string[];
+
+  constructor(private fruitService : FruitService) {
+    this.fruits = this.fruitService.getFruits();
+  }
 }

@@ -27,5 +27,4 @@ export class CarouselComponent {
     this.image = this.paths[this.i]; 
     this.i++;
   }
-
 }

@@ -8,6 +8,7 @@
     <button *ngFor="let key of keys" (click)="insertValue($event)">{{ key }}</button>
 </div>
 
+
 <div>
-    <button *ngIf="completed">Valider</button>
+    <button (click)="log()" *ngIf="completed">Valider</button>
 </div>

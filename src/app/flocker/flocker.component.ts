@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { PlayersService } from '../services/players.service'
 
 const BADGES_DIR = "assets/images/";
@@ -16,6 +16,7 @@ export class FlockerComponent implements OnInit {
   playersNum : string[] = this.playersService.getPlayersNum();
   playersList : string[] = [];
   flockText : string = "";
+  @Output() changeState : EventEmitter<string | number> = new EventEmitter();
 
   constructor(private playersService : PlayersService) {  }
 
@@ -40,6 +41,7 @@ export class FlockerComponent implements OnInit {
 
   flockName(event) {
     this.flockText = event.target.value;
+    console.log(this.flockText);
   }
 
 }

@@ -11,6 +11,7 @@ import { PlayerComponent } from './player/player.component';
 import { PlayerFormComponent } from './player-form/player-form.component';
 import { ImageGalleryComponent } from './image-gallery/image-gallery.component';
 import { FlockerComponent } from './flocker/flocker.component';
+import { PriceComponent } from './price/price.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FlockerComponent } from './flocker/flocker.component';
     PlayerComponent,
     PlayerFormComponent,
     ImageGalleryComponent,
-    FlockerComponent
+    FlockerComponent,
+    PriceComponent
   ],
   imports: [
     BrowserModule

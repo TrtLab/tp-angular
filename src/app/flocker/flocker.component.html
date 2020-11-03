@@ -7,7 +7,12 @@
     <img *ngFor="let b of path" [src]="b" (click)="selected($event)">
 </div>
 
-<div>
+<div *ngIf="flockPart">
+    <p>Quantity : </p>
+    <input type="number" name="" id="" value="1" (changeState)="quantity($event)">
+</div>
+
+<div *ngIf="flockPart">
     <select name="players" id="playersList" (change)="flockName($event)" > 
         <option value="">Choose your player tag</option>
         <option *ngFor="let p of playersList">{{ p }}</option>

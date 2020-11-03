@@ -8,7 +8,6 @@ import { Player } from '../interfaces';
 })
 export class PlayerComponent implements OnInit {
   @Input() player : Player;
-  // @Input() msg : string = "Coucou";
   // On autorise l'émission d'un string ou d'un number
   @Output() changeState : EventEmitter<string | number> = new EventEmitter();
 

@@ -13,12 +13,13 @@ export class VirtualkbComponent {
   constructor() { }
 
   insertValue(event : any){
-    let value = event.target.innerText;
-    console.log(value);
-    this.values.forEach(e => {
-      if(e === "_"){
-        e = value;
+    for (let index = 0; index < 6; index++) {
+      let value = event.target.innerText;
+      if(value !== " "){
+        this.values[index] = value;
+      console.log(value + " => "+ index); 
       }
-    });
+    }
+    this.completed = true;
   }
 }

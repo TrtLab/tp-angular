@@ -1,14 +1,23 @@
-<h2>VirtualKb Component</h2>
-
-<div class="values">
-    <p *ngFor="let value of values">{{ value }}</p>
-</div>
-
-<div class="virtual-kb">
-    <button *ngFor="let key of keys" (click)="insertValue($event)">{{ key }}</button>
-</div>
-
-
 <div>
-    <button (click)="log()" *ngIf="completed">Valider</button>
+    <div>
+        <span class="box" *ngFor="let box of boxes">
+            {{ box }}</span>
+    </div>
+    
+    <div id="kb">
+        <div 
+            *ngFor="let key of keys" 
+            class="key pointer"
+            (click)="selectKey($event)">
+            {{ key }}
+        </div>
+    </div>
+    
+    <div class="clearfix">
+        <button class="btn" [disabled]="inputCode.length != 6" 
+            (click)="log()">Valider</button>
+    </div>
+    
 </div>
+
+

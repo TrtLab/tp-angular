@@ -1,0 +1,13 @@
+<h2>AJAX component</h2>
+
+<input type="text" (keyup)="onKeyUp2($event)">
+
+<div (click)="selectedTodo = null" *ngIf="selectedTodo" class="detail">
+    Todo assignée à : {{ selectedTodo.userId }}
+</div>
+
+<p *ngFor="let todo of todos; let i = index">
+    <span>{{ i + 1 }}. </span>
+    <span class="title" (click)="todoDetails($event, todo.id)">{{ todo.title }}</span>
+    <span *ngIf="todo.completed">(terminé)</span>
+</p>

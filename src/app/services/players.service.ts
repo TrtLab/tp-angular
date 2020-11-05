@@ -1,19 +1,22 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PlayersService {
-  private playersLastname : string[] = ["Ronaldo", "Messi", "Griezmann"]
-  private playerNum : string[] = ["7", "10", "14"]
+export class PlayersService implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getPlayersLastname() {
-    return this.playersLastname;
+  ngOnInit() {
+    
   }
 
-  getPlayersNum(){
-    return this.playerNum;
+  getAll(): any {
+    return this.http.get('http://localhost:3000/players');
+  }
+
+  deletePlayer(id: number) {
+    return this.http.delete('http://localhost:3000/players/' + id)
   }
 }

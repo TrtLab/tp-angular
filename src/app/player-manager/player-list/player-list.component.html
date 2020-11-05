@@ -1,0 +1,13 @@
+<div class="list">
+    <div class="playerDetail" *ngFor="let player of players">
+        <div class="player">
+            <p>Nom: {{ player.lastname }}</p>
+            <p>Prénom: {{ player.firstname }}</p>
+            <p>Age: {{ player.age }}</p>
+            <p>Poste: {{ player.position }}</p>
+            <p>Equipe: {{ player.teamid }}</p>
+        </div>
+        <button (click)="addOrEdit = true">Editer</button>
+        <button (click)="delete(player.id)">Supprimer</button>
+    </div>
+</div>

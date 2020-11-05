@@ -1,0 +1,18 @@
+<h2>Ajout d'un joueur</h2>
+
+<div>{{ message }}</div>
+
+<!-- Form -->
+<div>
+    <input type="text" placeholder="Nom" [(ngModel)]="player.lastname">
+    <input type="text" placeholder="Prénom" [(ngModel)]="player.firstname">
+    <input type="number" placeholder="Age" [(ngModel)]="player.age">
+    <select [(ngModel)]="player.position">
+        <option>Gardien</option>
+        <option>Défenseur</option>
+        <option>Milieu</option>
+        <option>Attaquant</option>
+    </select>
+
+    <button (click)="postPlayer()">Post Player</button>
+</div>

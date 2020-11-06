@@ -16,7 +16,15 @@ export class PlayersService implements OnInit {
     return this.http.get('http://localhost:3000/players');
   }
 
+  createPlayer(player) {
+    return this.http.post('http://localhost:3000/players', player)
+  }
+
   deletePlayer(id: number) {
     return this.http.delete('http://localhost:3000/players/' + id)
+  }
+
+  editPlayer(id: number, player) {
+    return this.http.post('http://localhost:3000/players/' + id, player)
   }
 }

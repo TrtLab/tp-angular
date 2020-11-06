@@ -9,6 +9,7 @@ import { Player } from '../../interfaces';
 })
 export class PlayerListComponent implements OnInit {
   players: Player[] = [];
+  addOrEdit: boolean = false;
   @Output() onClick: EventEmitter<any> = new EventEmitter();
 
   constructor(private playersService: PlayersService) { }

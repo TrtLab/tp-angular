@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Input } from '@angular/core';
+import { PlayersService } from 'src/app/services/players.service';
 
 @Component({
   selector: 'app-player-form',
@@ -15,9 +16,8 @@ export class PlayerFormComponent implements OnInit {
     position: "gardien",
     age: 0
   };
-  @Input() addOrEdit: boolean = false;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private playerService: PlayersService) { }
 
   ngOnInit(): void {
   }
@@ -25,7 +25,7 @@ export class PlayerFormComponent implements OnInit {
   postPlayer() {
     let url = "http://localhost:3000/players";
 
-    this.http.post(url, this.player)
+    this.playerService.createPlayer(this.player)
       .subscribe((res: any) => {
         if(res.id) {
           this.message = `Le joueur ${res.lastname} a été ajouté`; 
